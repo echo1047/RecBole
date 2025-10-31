@@ -249,9 +249,11 @@ class Dataset(torch.utils.data.Dataset):
             else:
                 self.logger.info("Stop download.")
                 exit(-1)
-            torch.distributed.barrier()
+            if torch.distributed.is_available() and torch.distributed.is_initialized():
+                torch.distributed.barrier()
         else:
-            torch.distributed.barrier()
+            if torch.distributed.is_available() and torch.distributed.is_initialized():
+                torch.distributed.barrier()
 
     def _load_data(self, token, dataset_path):
         """Load features.
