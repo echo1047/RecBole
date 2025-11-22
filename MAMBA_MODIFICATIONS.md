@@ -29,7 +29,8 @@
 | 日期 | 文件 | 修改内容 | 状态 |
 |------|------|----------|------|
 | 2025-10-31 | MAMBA_MODIFICATIONS.md | 创建修改记录文件 | ✅ |
-| | | | |
+| 2025-10-31 | mambasubgoal.py, dataset.py, __init__.py | 注册MambaSubgoal为RecBole序列推荐模型 | ✅ |
+| 2025-11-22 | trainer.py | 修复PyTorch 2.6+兼容性问题 (weights_only=False) | ✅ |
 
 ---
 **注意**: 此分支的所有修改仅用于mamba_subgoal项目，不会影响RecBole官方代码。
